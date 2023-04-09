@@ -10,4 +10,7 @@ def get_data(url):
     req = requests.get(url, headers)
     print(req.text)
 
+    with open("projects.html", "w", encoding="utf-8") as file:
+        file.write(req.text)
+
 get_data("http://www.edutainme.ru/edindex/")
